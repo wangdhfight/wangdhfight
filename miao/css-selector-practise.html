@@ -1,40 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>css选择器练习</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css选择器练习</title>
 </head>
 <style>
-    background-color:rgb(40%, 50%, 70%);
-    p.d {color:red;} 
-    p.a:focus {color:blue;}
-    p.a:hover {color:red;}
-    p.a:active {color:green;}
- 
-    /* p.a.c>span:first-child{color:red} */
-    /* p.a.c>span>span:first-child{color:green} */
-    /* p.a.c>span>span:nth-child(2){color:blue} */
-    a:link{color:pink;}
-    a:visited{color:orange;}
-    a[href^="mailto:"]{color:blue}
-    a[href$=".pdf"i]{font-size:30px}
-    a[href^="tel:"]{color:yellow}
-    div.a>ul>li:nth-child(4) {color:red}
-    div.a>ul>li:nth-child(5) {color:red}
-    div.a>ul>li:nth-child(6) {color:red}
-    div.a>ul>li:nth-child(7) {color:red}
-    p.c>span:first-child {color:red}
-    p.c>span>span:first-child {color:green } 
-  </style>
+  body>p:first-child {
+    color: red;
+  }
+
+  body>p.a:nth-child(2):focus {
+    color: blue;
+  }
+
+  body>p.a:nth-child(2):hover {
+    color: red;
+  }
+
+  body>p.a:nth-child(2):active {
+    color: green;
+  }
+
+  .a.c>span>span {
+    color: red;
+  }
+
+  .a.c>span>span:nth-child(1) {
+    color: green;
+  }
+
+  .a.c>span>span:nth-child(2) {
+    color: blue;
+  }
+
+  .a.c+div a:link {
+    color: pink;
+  }
+
+  .a.c+div a:visited {
+    color: orange;
+  }
+
+  .a.c+div a[href^="mailto:"i] {
+    color: blue;
+  }
+
+  .a.c+div a[herf^="tel:"i] {
+    color: yellow;
+  }
+
+  .a.c+div a[herf$=".pdf"i] {
+    font-size: 30px;
+  }
+
+  .a ul li:nth-child(4),
+  .a ul li:nth-child(5),
+  .a ul li:nth-child(6),
+  .a ul li:nth-child(7) {
+    color: red;
+  }
+
+  .b ul li:nth-child(-n+25) {
+    color: red;
+  }
+
+  .b ul li:nth-child(n+65) {
+    color: green;
+  }
+
+  .b ul li:nth-child(n+35):nth-child(-n+50) {
+    color: blue;
+  }
+
+  .prime li:nth-child(1),
+  .prime li:nth-child(2n+4),
+  .prime li:nth-child(3n+9),
+  .prime li:nth-child(5n+25) {
+    color: crimson;
+  }
+</style>
 </head>
+
 <body>
-  <p class="d">红色</p>
+  <p>红色</p>
 
   <p class="a" tabindex="-1">鼠标悬浮时为红色，按下去时为绿色，获得焦点时为蓝色</p>
 
   <p class="a c">
-    <span >
+    <span>
       红色
       <span>绿色</span>
       <span>蓝色</span>
@@ -49,11 +104,8 @@
       让所有邮件的链接为蓝色 <br>
       播打电话的链接为黄色<br>
       下载pdf的链接字号为30px<br>
-
     </p>
-    <style>
-      
-    </style>
+
     <a href="https://www.mi.com/">mi</a>
     <a href="https://www.jd.com/">jd</a>
     <a href="https://www.baidu.com/">你肯定没访问过我</a>
@@ -64,11 +116,6 @@
     <a href="aaa.pdf">下载pdf</a>
     <a href="aaa.PDF">下载pdf</a>
   </div>
-<style>
-    div.b>ul>li:nth-child(n+65){color:green}
-    div.b>ul>li:nth-child(-n+25){color:red}
-    div.b>ul>li:nth-child(-n+50):nth-child(n+35){color:blue}
-</style>
 
   <div class="a">
     <p>让下面的4567元素为红色</p>
@@ -93,8 +140,6 @@
 
   <hr>
 
-
-  </style>
   <div class="b">
     <p>让25及以内的元素为红色</p>
     <p>让65及以上的元素为绿色</p>
@@ -204,15 +249,8 @@
   </div>
 
   <hr>
-<style>
-  /* 1不属于任何数 */
-  div.prime>ul{color:green}
-  div.prime>ul>li:first-child{color:violet}
-  div.prime>ul>li:nth-child(3n + 6),
-  div.prime>ul>li:nth-child(2n + 4),
-  div.prime>ul>li:nth-child(5n + 10),
-  div.prime>ul>li:nth-child(7n + 14){color: red;}
-</style>
+
+
   <div class="prime">
     <p>让所有的质/素数(prime)（2，3，5，7，11，13……）跟合数（4，6，8，9，10……）为不同的颜色</p>
     <ul>
@@ -318,49 +356,6 @@
       <li>100</li>
     </ul>
   </div>
-  <style>
-    a.aaa[]{color: red;}
-    a.aaa[title]{color: red;}
-
-  </style>
-  <div> 
-    <a  class= "aaa" href="https://www.baidu.com" title="baidu" >百度一下你就知道</a>
-  </div>
-  <div>
-    <form action="https://www.baidu.com/s" target="_blank">
-      <input type="text" name="wd">
-      <input type="submit" value="百度一下你就知道">
-    </form>
-  </div>
-  <style>
-    p[lang*="dg"]{color:red}
-    a[href^="mailto@"]{font: size 1190;;}
-    a[href$=".pdf"]i{font-size: larger;}
-    a[href^="mailto:"]{color:violet;}
-  </style>
-
-
-  <div>
-    <p lang="dgdd">sadd dsds fdsf dsfdsf gfdg sfsdf dsfs dsfsf apple </p>
-  </div>
-  <div>
-    <a href="https://www.baidu.com">百度一下你就跳楼</a>
-    <a href="mailto:aaa@bbb.com">dsdf</a>
-    <a  href="https://www.runoob.com/manual/github-git-cheat-sheet.pdf" ;>defefe</a>
-  </div>
-  
-  <div >
-    <a href="mailto:aaa@bbb.com" >发邮件</a>
-    <a href="https://www.baidu.com">百度一下你就得病</a>
-  </div>
-  <div>
-    <!-- 建立一个搜索引擎 -->
-    <form action="https://cn.bing.com/search" target="_blank" >
-      <input type="text" name="q">
-      <input type="submit" value="dsad">
-
-    </form>
-  </div>
 </body>
-</html>
+
 </html>

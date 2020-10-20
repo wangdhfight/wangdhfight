@@ -1,94 +1,113 @@
 <!DOCTYPE html>
 <!-- saved from url=(0054)https://pimingxin.github.io/miao/css-block-layout.html -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>css-block-layout</title>
   <style>
-    body{
+    body {
       margin: 0;
     }
+
     header {
       color: white;
       background-color: black;
+      width: 600px;
+      padding: 0 calc(50% - 300px);
     }
-    .p1 {
+
+    p {
+      width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    ul.a{
+      list-style: none;
+      padding: 0;
+      width: 600px;
       margin: auto;
-      width: 600px;
     }
 
-    .p2 {
-      width: 600px;
-      margin: 16px auto;
-    }
-
-    #d1{
-      width: 600px;
-      margin: 0 auto;
-      margin-bottom: 20px;
-    }
-
-    div:not([id="d1"]){
-      width: 174px;
-      height: 34px;
+    .a li{
+      box-sizing: border-box;
+      width: 180px;
+      height: 40px;
       border: 3px solid black;
-      background-color: pink;
-      margin-top: 15px;
+      margin-bottom: 15px;
       text-align: center;
       line-height: 34px;
     }
-    div:not([id="d1"]):hover {
-      background-color: red;
+
+    .a li:hover{
+      background: red;
     }
-    div:nth-child(3n+2) {
-      margin-left: 210px;
-      margin-top: -40px;
+
+    .a li:nth-child(n+5){
+        margin-left: 210px;
     }
-    div:nth-child(3n+3) {
+
+    .a li:nth-child(n+9){
       margin-left: 420px;
-      margin-top: -40px;
     }
-    .p3{
-      border: 1px dotted transparent;
-      border-bottom-color: black;
-      width: 598px;
-      margin: 0 auto;
+
+    .a li:nth-child(4n+5){
+      margin-top: -220px;
     }
-    .p4{
-      border-color: transparent;
+
+    .links {
+      width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0;
+      list-style: none;
     }
-    .p5{
-      background-color: rgb(238, 138, 238);
-      text-align: center;
+
+    .links li{
+      border-bottom: 1px dotted black;
     }
     
+    .links li:last-child{
+      border-bottom: none;
+    }
   </style>
 </head>
-<body style="">
+
+<body>
   <header>
-    <p class="p1">hello world 请调整浏览器窗口大小查看效果</p>
+    hello world 请调整浏览器窗口大小查看效果
   </header>
-  <p class="p2">页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px</p>
-  <div id="d1">
-    <div>宽180高40(包含边框)</div>
-    <div>产品</div>
-    <div>产品</div>
-    <div>水平间隙30px</div>
-    <div>产品</div>
-    <div>产品</div>
-    <div>垂直间隙15px</div>
-    <div>产品</div>
-    <div>产品</div>
-    <div>边框宽度3px</div>
-    <div>产品</div>
-    <div>产品</div>
-  </div>
-    <p class="p3">link</p>
-    <p class="p3">link</p>
-    <p class="p3">link</p>
-    <p class="p3">link</p>
-    <p class="p3 p4">link</p>
-    <p class="p5">©版权所有<br>本页所有布局均使用块元素</p>
+
+  <p>页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体
+    宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体 宽度600px 页面主体
+    宽度600px</p>
+
+    <ul class="a">
+      <li>Lorem.</li>
+      <li>Quisquam.</li>
+      <li>Libero?</li>
+      <li>Repudiandae.</li>
+      <li>Quod.</li>
+      <li>Mollitia.</li>
+      <li>Animi!</li>
+      <li>Quisquam.</li>
+      <li>Similique!</li>
+      <li>Tempora!</li>
+      <li>Ullam.</li>
+      <li>Voluptate?</li>
+    </ul>
+    
+    <ul class="links">
+      <li>link</li>
+      <li>link</li>
+      <li>link</li>
+      <li>link</li>
+      <li>link</li>
+    </ul>
 </body>
+
 </html>
