@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            background-color:gray;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            font-size: 16px;
+            padding: 2px 8px;
+            display: inline-block;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        li:hover {
+            background-color: gold;
+        }
+
+        li li {
+            display: block;
+        }
+
+        li ul {
+            display: none;
+        }
+
+        li:hover > ul {
+            display: block;
+        }
+
+        ul ul {
+            position: absolute;
+            left: 0;
+            top: 100%;
+        }
+
+        ul ul ul {
+            left: 100%;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>文件
+            <ul>
+                <li>新建文件
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                    </ul>
+                </li>
+                <li>保存文件</li>
+                <li>删除文件</li>
+                <li>再保存文件</li>
+            </ul>
+        </li>
+        <li>格式</li>
+        <li>处理</li>
+        <li>瑷珲</li>
+    </ul>
+</body>
+
+</html>
