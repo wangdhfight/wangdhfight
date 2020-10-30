@@ -2,45 +2,176 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        dd {
-            display: inline;
-            margin: 0;
-        }
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>radio-sider</title>
+   <style>
+      html,body{
+         margin: 0;
+      }
+      ul {
+         list-style-type: none;
+         padding: 0;
+         margin: 0;
+         /* ul需要设置list，padding，margin */
+      }
 
-        dt+dd {
-            margin-left: 60px;
-        }
+      section {
+         width: 800px;
+         height: 800px;
+         border: 2px solid red;
+         position: relative;
+      }
 
-        dt{
-            margin-bottom: -21px;
-        }
-    </style>
+      section>input {
+         display: none;
+      }
+
+      section ul {
+         width: 100%;
+         height: 100%;
+         position: relative;
+      }
+
+      section ul li {
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         opacity: 0;
+         transition: 1s;
+      }
+
+      section ul li img {
+         width: 100%;
+         height: 100%;
+         display: block;
+      }
+
+      section ul li label {
+         background-color: rgba(0, 0, 0, 0.5);
+         position: absolute;
+         top: 0;
+         bottom: 0;
+         width: 25px;
+         margin: auto;
+         height: 50px;
+         line-height: 50px;
+         text-align: center;
+         cursor: pointer;
+      }
+
+      section ul li label:hover {
+         background-color: #8800dd;
+      }
+
+      section ul li label:nth-of-type(1) {
+         left: 0;
+      }
+
+      section ul li label:nth-of-type(2) {
+         right: 0;
+      }
+
+      input:nth-child(1):checked~ul.silders>li:nth-child(1),
+      input:nth-child(2):checked~ul.silders>li:nth-child(2),
+      input:nth-child(3):checked~ul.silders>li:nth-child(3),
+      input:nth-child(4):checked~ul.silders>li:nth-child(4),
+      input:nth-child(5):checked~ul.silders>li:nth-child(5) {
+         opacity: 1;
+         z-index: 8;
+      }
+
+      section>div.indicators {
+         position: absolute;
+         bottom: 0;
+         left: 0;
+         padding: 5px;
+         z-index: 20;
+         width: 100%;
+         right: 0;
+         margin: auto;
+      }
+
+      section>div.indicators label {
+         width: 10px;
+         height: 10px;
+         border: 2px solid #3344ff;
+         display: inline-block;
+         background-color: #ccee22;
+         margin:0 3px ;
+         cursor: pointer;
+      }
+
+      input:nth-child(1):checked~div.indicators label:nth-child(1),
+      input:nth-child(2):checked~div.indicators label:nth-child(2),
+      input:nth-child(3):checked~div.indicators label:nth-child(3),
+      input:nth-child(4):checked~div.indicators label:nth-child(4),
+      input:nth-child(5):checked~div.indicators label:nth-child(5) {
+         background-color: #66ff44;
+      }
+   </style>
 </head>
 
 <body>
-    <dl>
-        <dt>姓名姓名姓名</dt>
-        <dd>张三</dd>
-        <dd>张三</dd>
-        <dd>张三</dd>
-        <dd>张三</dd>
-        <dd>张三</dd>
-        <dt>性别</dt>
-        <dd>张三</dd>
-        <dd>张三</dd>
-        <dd>张三</dd>
-        <dd>张三</dd>
-        <dd>张三</dd>
-        <dt>学习</dt>
-        <dd>张三</dd>
-        <dd>张三</dd>
-        <dd>张三</dd>
-        <dd>张三</dd>
-    </dl>
+   <section>
+      <input type="radio" name="s1" id="s1-1" checked>
+      <input type="radio" name="s1" id="s1-2">
+      <input type="radio" name="s1" id="s1-3">
+      <input type="radio" name="s1" id="s1-4">
+      <input type="radio" name="s1" id="s1-5">
+      <ul class="silders">
+         <li>
+            <a href="#">
+               <img
+                  src="https://travel.12306.cn/imgs/resources/uploadfiles/images/6d77d0ea-53d0-4518-b7e9-e53795b4920c_product_W572_H370.jpg"
+                  alt=""></a>
+            <label for="s1-5">
+               <</label>
+                  <label for="s1-2">></label>
+         </li>
+         <li>
+            <a href="#"><img
+                  src="https://travel.12306.cn/imgs/resources/uploadfiles/images/d9ae79de-2f3f-4e9f-ad6e-bdc291dda92a_product_W572_H370.jpg"
+                  alt=""></a>
+            <label for="s1-1">
+               <</label>
+                  <label for="s1-3">></label>
+         </li>
+         <li>
+            <a href="#"><img
+                  src="https://travel.12306.cn/imgs/resources/uploadfiles/images/8b36f9a7-f780-4e71-b719-9300109a9ff2_product_W572_H370.jpg"
+                  alt=""></a>
+            <label for="s1-2">
+               <</label>
+                  <label for="s1-4">></label>
+         </li>
+         <li>
+            <a href="#"><img
+                  src="https://travel.12306.cn/imgs/resources/uploadfiles/images/fcd7173f-7651-46e7-a126-bdc199e1f6f7_product_W572_H370.jpg"
+                  alt=""></a>
+            <label for="s1-3">
+               <</label>
+                  <label for="s1-5">></label>
+         </li>
+         <li>
+            <a href="#"><img
+                  src="https://travel.12306.cn/imgs/resources/uploadfiles/images/1716878f-79a2-4db1-af8c-b9c2039f0b3c_product_W572_H370.jpg"
+                  alt=""></a>
+            <label for="s1-4">
+               <</label>
+                  <label for="s1-5">></label>
+         </li>
+         <div class="indicators">
+            <label for="s1-1"></label>
+            <label for="s1-2"></label>
+            <label for="s1-3"></label>
+            <label for="s1-4"></label>
+            <label for="s1-5"></label>
+         </div>
+      </ul>
+   </section>
 </body>
 
 </html>
