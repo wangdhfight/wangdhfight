@@ -110,7 +110,7 @@
     var y=Number(prompt())
     var a=n-Math.ceil(y/x)
     console.log(a)
-    </script>
+</script>
 
 <script id="ch0103/16">
     var Xa=Number(prompt())
@@ -155,7 +155,7 @@
 <script id="ch0103/20">
     var n=Number(prompt())
     console.log(Math.pow(2,n))
-</script> --> -->
+</script> 
 
 <script id="ch0104/01">
     var N=Number(prompt())
@@ -279,24 +279,18 @@
 
 <script id="ch0104/13">
     var x=Number(prompt())
-    if(x==0||x>0&&x<5){
+    if(0 <= x && x < 5){
         console.log(-x+2.5)
-    }else if(x==5||x>5&&x<10){
+    }else if(5 <= x&&x<10){
         console.log(2-1.5*(x-3)(x-3))
-    }else if(x==10||x>10&&x<20){
+    }else if(10 <= x&& x < 20){
         console.log(x/2-1.5)
     }
 </script>
 
 <script id="ch0104/14">
     var x=Number(prompt())
-    if(x<1000){
-        console.log(8)
-    }else if(x>1000){
-        console.log(2-1.5*(x-3)(x-3))
-    }else if(x==10||x>10&&x<20){
-        console.log(x/2-1.5)
-    }
+
 </script>
 
 <script id="ch0104/15">
@@ -331,7 +325,7 @@
 
 <script id="ch0104/17">
     var x=Number(prompt())
-    if ( x % 4 == 0&& x % 100 != 0) {
+    if ( x % 4 == 0 || x % 400== 0&& x % 100 != 0) {
         console.log('Y')
     }else{
         console.log('N')
@@ -351,10 +345,15 @@
 <script id="ch0104/19">
     var x=Number(prompt())
     var y=Number(prompt())
-    if ( x >= -1 && x <= 1 && y >= -1 && y <= 1) {
-        console.log('yes')
-    }else{
-        console.log('no')
+    var operator=prompt()
+    if ( operator == '+') {
+        console.log(a+b)
+    }else if(operator == '-'){
+        console.log(a-b)
+    }else if(operator == '*'){
+        console.log(a*b)
+    }else if(operator == '/'){
+        console.log(a/b)
     }
 </script>
 
@@ -368,7 +367,7 @@
     if (delta == 0) {
         console.log('x1='+ x1,'x2='+ x2)
     }else if(delta > 0){
-        console.log('x1='+ x1,'x2='+ x2)
+        console.log('x1=x2='+ x1)
     }else if(delta < 0){
         console.log('x1='+((-b)/(2*a)))+'+'+(Math.sqrt(4*a*c-b*b) / (2*a))+'i','x2='+((-b)/(2*a))+'-'+(Math.sqrt(4*a*c-b*b) / (2*a))+'i'
     }
@@ -380,4 +379,338 @@
     var y=Number(prompt())
     var a=n-Math.ceil(y/x)
     console.log(a)
+</script>
+
+<script id="ch0105/01">
+debugger
+    var amount=Number(prompt())
+    var i=0
+    var sum=0
+    while( i < amount){
+        i++
+        var age=Number(prompt())
+        sum=sum+age  
+    }
+    var average=sum/amount
+    console.log(average)
+</script>
+
+<script id="ch0105/02">
+    var i=0
+    var sum=0
+    while( i < 12){
+        i++
+        var surplus=Number(prompt())
+        sum=sum+surplus
+    }
+    var average=sum/12
+    console.log('$'+average)
+</script>
+
+<script id="ch0105/03">
+    var capacity=Number(prompt())
+    var i=0
+    var sum=0
+    while( i < capacity){
+        i++
+        var value=Number(prompt())
+        sum = sum + value  
+    }
+    var average = sum / capacity
+    console.log(average)
+</script>
+
+<script id="ch0105/04">
+    var capacity=Number(prompt())
+    var i=0
+    var sum=0
+    while( i < capacity){
+        i++
+        var value=Number(prompt())
+        sum = sum + value  
+    }
+    var average = sum / capacity
+    console.log(sum,average)
+</script>
+
+<script id="ch0105/05">
+    var capacity=Number(prompt())
+    var i=0
+    var temp=0
+    while( i < capacity){
+        i++
+        var value=Number(prompt())
+        if(temp < value){
+            temp=value
+        }
+    }
+    console.log(temp)
+</script>
+
+<script id="ch0105/06">
+    var capacity=Number(prompt())
+    var i=0
+    var temp=0
+    while( i < capacity){
+        i++
+        var value=Number(prompt())
+        if(temp < value){
+            temp=value
+        }
+    }
+    console.log(temp)
+</script>
+
+<script id="ch0105/07">
+    var n=Number(prompt())
+    var i=0
+    var temp=0
+    var sum1=0
+    var sum2=0
+    var sum3=0
+    var sum4=0
+    while( i < n ){
+        i++
+        var gold=Number(prompt())
+        var silver=Number(prompt())
+        var copper=Number(prompt())
+        sum1=sum1 + gold
+        sum2=sum2 + silver
+        sum3=sum3 + copper
+        sum4=sum1+sum2+sum3
+    }
+    console.log(sum1,sum2,sum3,sum4)
+</script>
+
+<script id="ch0105/08">
+    var n=Number(prompt())
+    var i=0
+    var sum=0
+    while( i < n-1){
+        i++
+        var angle=Number(prompt())
+        sum=sum+angle
+    }
+    var reminder=(n-2)*180-sum
+    console.log(reminder)
+</script>
+
+<script id="ch0105/09">
+    var m=Number(prompt())
+    var n=Number(prompt())
+    var i=0
+    var sum=0
+    if( m % 2 == 0){
+        ++m
+    }
+    for(i = m ; i <= n ; i =i + 2){
+        sum= sum + i;
+    }
+    console.log(sum)
+</script>
+
+<script id="ch0105/10">
+    debugger
+    var m=Number(prompt())
+    var n=Number(prompt())
+    var i=0
+    var sum=0
+    for(i = m ; i <= n ; i = i++){
+        if( i % 17 == 0){
+            sum=sum+i
+        }
+    }
+    console.log(sum)
+</script>
+
+<script id="ch0105/11">
+    var n=Number(prompt())
+    var i=0
+    var sum=0
+    var tag1=0
+    var tag2=0
+    var tag3=0
+    for(i ;i <= n; i++){
+        var value=Number(prompt())
+        if(value==1){
+            var tag1=tag1+1
+        }
+        if(value==5){
+            var tag2=tag2+1
+        }
+        if(value==10){
+            var tag3=tag3+1
+        }
+    }
+    console.log(tag1,tag2,tag3)
+</script>
+
+<script id="ch0105/12">
+    var n=Number(prompt())
+    var m=Number(prompt())
+    var i=0
+    var tag=0
+    for(i;i < n ; i++){
+        var value=Number(prompt())
+        if(m==value){
+            tag=tag+1
+        }
+    }
+    console.log(tag)
+</script>
+
+<script id="ch0105/13">
+    var a=Number(prompt())
+    var n=Number(prompt())
+    var result=Math.pow(a,n)
+    console.log(result)
+</script>
+
+<script id="ch0105/14">
+    var x=Number(prompt())
+    var n=Number(prompt())
+    var result=x*Math.pow(1.001,n)
+    console.log(result)
+</script>
+
+<script id="ch0105/15">
+    var R=Number(prompt())
+    var M=Number(prompt())
+    var Y=Number(prompt())
+    var rate=(100+R)/100
+    var result=M*Math.pow(rate,Y)
+    console.log(result)
+</script>
+
+<script id="ch0105/16">
+    var N=Number(prompt())/* 程序员年薪 */
+    var K=Number(prompt())/* 每年百分数增长 */
+    var M=1/* 第几年 */
+    var sumSalary=0
+    var price=200
+
+    var flag=false
+    for(M;M <= 20; M++){
+        sumSalary += N  
+        if(sumSalary >= price){
+            console.log(M)
+            flag=true
+            break
+        }
+        price *=(1 + K / 100)
+    }
+    if(!flag){
+        console.log('Impossible')
+    }
+</script>
+
+<script id="ch0105/17">
+    var N=Number(prompt())/* 程序员年薪 */
+    var K=Number(prompt())/* 每年百分数增长 */
+    var M=1/* 第几年 */
+    var sumSalary=0
+    var price=200
+
+    var flag=false
+    for(M;M <= 20; M++){
+        sumSalary += N  
+        if(sumSalary >= price){
+            console.log(M)
+            flag=true
+            break
+        }
+        price *=(1 + K / 100)
+    }
+    if(!flag){
+        console.log('Impossible')
+    }
+</script>
+
+<script id="ch0105/18">
+    var n=Number(prompt())/* 对照试验次数 */
+    for(var i = 1;i <= n; i++){
+        if(i==1){
+            var x=Number(prompt())
+            var y=Number(prompt())
+            var exp=y/x
+        }else{
+            var x=Number(prompt())
+            var y=Number(prompt())
+            var effective=y/x
+            if(effective>1.05*exp){
+                console.log('better')
+            }else if(effective<0.95*exp){
+                console.log('worse')
+            }else{
+                console.log('same')
+            }
+        }    
+    }
+</script>
+
+<script id="ch0105/19">
+    var n=Number(prompt())/* 屋顶数 */
+    var alltime=0
+    for(var i = 1;i <= n; i++){
+        var x=Number(prompt())/* 坐标点x轴坐标 */
+        var y=Number(prompt())/* 坐标点y轴坐标 */
+        var overall=Number(prompt())/* 总人数 */
+        var time=Math.ceil(1.5*overall+2*Math.sqrt(x**2+y**2)/50)
+        alltime += time
+    }
+    console.log(alltime)
+</script>
+
+<script id="ch0105/20">
+    var h=Number(prompt())/* 初始高度 */
+    var sum=0
+    for(var i = 1;i < 10; i++){
+        sum=sum+h*2
+        h=h/2
+    }
+    console.log(sum,h)
+</script>
+
+<script id="ch0105/21">
+    var N=Number(prompt())/*  */
+    var temp=0
+    if(N % 2 != 0){
+            temp = N * 3 + 1
+            console.log(N+'*3+1='+temp)
+            N=temp
+            }
+    for(var i=0;i <=N; i++){
+        if(N % 2 == 0){
+            temp=N/2
+            console.log(N +'/2='+ temp)
+            N=temp
+        }
+    }
+    console.log('End')
+</script>
+
+<script id="ch0105/22">
+        var money=0
+        var save=0
+        var total=0
+        var month=0
+    for(var i = 1;i <= 12; i++){
+        var budget= Number(prompt())
+        money=money + 300
+        save=money - budget
+        if(save < 0){
+            month-=i
+            break
+        }else if(save >= 100){
+            total=total + (save/100)*100 /* 给妈妈存的钱 */
+            money=save - (save/100)*100
+        }else{
+            money=save
+        }
+    }
+    if(month < 0){
+        console.log(month)
+    }else{
+        money+tatal*120/100
+    }
 </script>
