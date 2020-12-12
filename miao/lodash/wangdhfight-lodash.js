@@ -22,7 +22,7 @@
         function compact(array){
             var result = []
             for(var i = 0 ; i <= array.length-1 ; i++){
-                if(ary[i]){
+                if(array[i]){
                     result.push(array[i])
                 }
             }
@@ -42,16 +42,15 @@
         }
 
 
-        function difference(array,[values]){
-            var result = []
-            for(var i = 0 ; i <= array.length - 1 ; i++){
-                for(var j = 0 ; j <= values.length - 1 ; j++){
-                    if(array[i] == values[j]){
-                        result = array.splice(i,1)
-                    }
+        function difference(ary,...args){
+            var res = []
+            var c = concat(...args)
+            for(var idx of ary){
+                if(c.indexOf(idx) == -1){
+                    res.push(idx)
                 }
             }
-            return result
+            return res
         }
 
 
