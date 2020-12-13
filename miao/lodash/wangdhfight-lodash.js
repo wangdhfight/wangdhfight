@@ -62,14 +62,13 @@
 
 
 
-        function dropright(array,n = 1){
+        function dropRight(array,n = 1){
             var result= []
             for(var i = 0;i < array.length - n ; i++){
                 result.push(array[i])
             }
             return result
         }
-
 
 
         function fill(array,value,start=0,end=array.length){
@@ -79,14 +78,57 @@
             return array
         }
 
-
-        function filter(){
+        function findIndex(array, f, fromIndex = 0) {
+            if (typeof(f) == 'function') {
+                for (let i = fromIndex; i < array.length; i++) {
+                    if (f(array[i])) return i
+                }
+                return -1
+            } else if (Array.isArray(f)) {
+                for (let i = fromIndex; i < array.length; i++) {
+                    for (let j in array[i]) {
+                        if (f[0] == j && f[1] == array[i][j]) return i
+                    }
+                }
+                return -1
+            } else if (typeof(f) == 'object') {
+                for (let i = fromIndex; i < array.length; i++) {
+                    for (let j in array[i]) {
+                        if (f[j] && array[i][j] == f[j]) return i
+                    }
+                }
+                return -1
+            } else if (typeof(f) == 'string') {
+                for (let i = fromIndex; i < array.length; i++) {
+                    for (let j in array[i]) {
+                        if (array[i][f]) return i
+                    }
+                }
+                return -1
+            }
+        }
+        function findLastIndex(){
 
         }
+        function flatten(){
 
+        }
+        function flattenDeep(){
 
+        }
+        function flattenDepth(){
 
-        function indexof(array,value,fromindex = 0){
+        }
+        function fromPairs(){
+
+        }
+        function head(){
+
+        }
+        function inital(){
+
+        }
+        function indexOf(array,value,fromindex = 0){
             for(var i = fromindex; i < array.length;i++){
                 if(array[i] == value){
                     return i
@@ -95,18 +137,80 @@
             }
         }
 
+        function reverse(){
 
+        }
+        
+        function sortedIndex(){
 
+        }
+        function every(){
 
+        }
+        function find(array,f,fromIndex=0){
+            if (typeof(f) == 'function') {
+                for (let i = fromIndex; i < array.length; i++) {
+                    if (f(array[i])) return array[i]
+                }
+                return -1
+            } else if (Array.isArray(f)) {
+                for (let i = fromIndex; i < array.length; i++) {
+                    for (let j in array[i]) {
+                        if (f[0] == j && f[1] == array[i][j]) return array[i]
+                    }
+                }
+                return -1
+            } else if (typeof(f) == 'object') {
+                for (let i = fromIndex; i < array.length; i++) {
+                    for (let j in array[i]) {
+                        if (f[j] && array[i][j] == f[j]) return array[i]
+                    }
+                }
+                return -1
+            } else if (typeof(f) == 'string') {
+                for (let i = fromIndex; i < array.length; i++) {
+                    for (let j in array[i]) {
+                        if (array[i][f]) return array[i]
+                    }
+                }
+                return -1
+            }
+        }
+        function filter(){
+
+        }
+        function toArray(){
+
+        }
+        function max(){
+
+        }
+        function maxBy(){
+
+        }
+        function min(){
+
+        }
+        function minBy(){
+
+        }
+        function sum(){
+
+        }
+        function sumBy(){
+
+        }
         return{
             chunk,
             compact,
             concat,
             difference,
             drop,
-            dropright,
+            dropRight,
             fill,
             filter,
-            indexof,
+            indexOf,
+            find,
+            findIndex,
         }
     }()
