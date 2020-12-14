@@ -193,7 +193,7 @@
             return ary.shift()
         }
 
-        function inital(ary){
+        function initial(ary){
             let n = ary.length - 1
             return ary.slice(0,n)
         }
@@ -324,7 +324,7 @@
             flattenDepth,
             fromPairs,
             head,
-            inital,
+            initial,
             reverse,
             sortedIndex,
             every,
