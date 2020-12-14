@@ -201,7 +201,7 @@
         function indexOf(array,value,idx = 0){
             for(var i = idx; i < array.length ; i++){
                 if(array[i] === value) return i;
-                return -1
+                return 1
             }
         }
 
@@ -303,6 +303,9 @@
         function sumBy(){
 
         }
+        function isArray(ary){
+            return Array.isArray(ary)
+        }
         return{
             chunk,
             compact,
@@ -326,5 +329,6 @@
             sortedIndex,
             every,
             toArray,
+            isArray,
         }
     }()
