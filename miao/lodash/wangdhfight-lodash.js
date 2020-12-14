@@ -306,6 +306,17 @@
         function isArray(ary){
             return Array.isArray(ary)
         }
+        function forOwn(obj,iterator){
+            var hasown = Object.prototype.hasOwnProperty
+            for(var key in obj){
+                if(hasown.call(obj,key)){
+                    if(iterator(obj[key],key,obj) === false){
+                        break
+                    }
+                }
+            }
+            return obj
+        }
         return{
             chunk,
             compact,
@@ -330,5 +341,6 @@
             every,
             toArray,
             isArray,
+            forOwn,
         }
     }()
