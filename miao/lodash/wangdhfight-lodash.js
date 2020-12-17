@@ -286,9 +286,9 @@
             return res
         }
         function max(ary){
-            if(ary == [] || undefined) return undefined
+            if(ary.length < 1) return undefined
             for(var i = 0 ; i <= ary.length-2; i++){
-                var Max = ary[i] > ary[i+1] ? ary[i] : ary[i+1]
+                var Max = (ary[i] > ary[i+1]) ? ary[i] : ary[i+1]
             }
             return Max
         }
@@ -296,19 +296,19 @@
             if(ary.length < 1) return undefined
             if(typeof f == 'function'){
                 for(let i in ary){
-                    var Max = f(ary[i]) > f(ary[i+1]) ? f(ary[i]) : f(ary[i+1])
+                    var Max = (f(ary[i]) > f(ary[i+1]))? f(ary[i]) : f(ary[i+1])
                 }  
             }else{
                 for(let i in ary){
-                    var Max = ary[i] > ary[i+1] ? ary[i] : ary[i+1]
+                    var Max = (ary[i] > ary[i+1]) ? ary[i] : ary[i+1]
                 }
             }
             return Max
         }
         function min(ary){
-            if(ary == []||undefined) return undefined;
+            if(ary.lenght < 1) return undefined;
             for(var i = 0 ; i <= ary.length-2; i++){
-                var Min = ary[i] < ary[i+1] ? ary[i] : ary[i+1]
+                var Min = (ary[i] < ary[i+1]) ? ary[i] : ary[i+1]
             }
             return Min
         }
@@ -316,11 +316,11 @@
             if(ary.length < 1) return undefined
             if(typeof f == 'function'){
                 for(let i in ary){
-                    var Min = f(ary[i]) < f(ary[i+1]) ? f(ary[i]) : f(ary[i+1])
+                    var Min = (f(ary[i]) < f(ary[i+1])) ? f(ary[i]) : f(ary[i+1])
                 }  
             }else{
                 for(let i in ary){
-                    var Min = ary[i] < ary[i+1] ? ary[i] : ary[i+1]
+                    var Min = (ary[i] < ary[i+1]) ? ary[i] : ary[i+1]
                 }
             }
             return Min
@@ -328,15 +328,15 @@
         function sum(ary){
             return ary.reduce((pre,cur)=>pre+cur,0)
         }
-        function sumBy(ary){
-            let res = -0
+        function sumBy(ary,f){
+            let res = 0
             if(typeof f == 'function'){
                 for(let i in ary){
-                    res = sum(ary[i])
+                    res += f(i)
                 }
             }else{
                 for(let i in ary){
-                    res = sum(ary[i])
+                    res += f[i]
                 }
             }
             return res
