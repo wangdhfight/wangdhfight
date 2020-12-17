@@ -285,23 +285,61 @@
             }
             return res
         }
-        function max(){
-
+        function max(ary){
+            if(ary == [] || undefined) return undefined
+            for(var i = 0 ; i <= ary.length-2; i++){
+                var Max = ary[i] > ary[i+1] ? ary[i] : ary[i+1]
+            }
+            return Max
         }
-        function maxBy(){
-
+        function maxBy(ary,f){
+            if(ary.length < 1) return undefined
+            if(typeof f == 'function'){
+                for(let i in ary){
+                    var Max = f(ary[i]) > f(ary[i+1]) ? f(ary[i]) : f(ary[i+1])
+                }  
+            }else{
+                for(let i in ary){
+                    var Max = ary[i] > ary[i+1] ? ary[i] : ary[i+1]
+                }
+            }
+            return Max
         }
-        function min(){
-
+        function min(ary){
+            if(ary == []||undefined) return undefined;
+            for(var i = 0 ; i <= ary.length-2; i++){
+                var Min = ary[i] < ary[i+1] ? ary[i] : ary[i+1]
+            }
+            return Min
         }
-        function minBy(){
-
+        function minBy(ary,f){
+            if(ary.length < 1) return undefined
+            if(typeof f == 'function'){
+                for(let i in ary){
+                    var Min = f(ary[i]) < f(ary[i+1]) ? f(ary[i]) : f(ary[i+1])
+                }  
+            }else{
+                for(let i in ary){
+                    var Min = ary[i] < ary[i+1] ? ary[i] : ary[i+1]
+                }
+            }
+            return Min
         }
-        function sum(){
-
+        function sum(ary){
+            return ary.reduce((pre,cur)=>pre+cur,0)
         }
-        function sumBy(){
-
+        function sumBy(ary){
+            let res = -0
+            if(typeof f == 'function'){
+                for(let i in ary){
+                    res = sum(ary[i])
+                }
+            }else{
+                for(let i in ary){
+                    res = sum(ary[i])
+                }
+            }
+            return res
         }
         function isArray(ary){
             return Array.isArray(ary)
@@ -342,5 +380,11 @@
             toArray,
             isArray,
             forOwn,
+            max,
+            min,
+            maxBy,
+            minBy,
+            sum,
+            sumBy,
         }
     }()
