@@ -178,7 +178,7 @@
             return res
         }
 
-        function fromPairs(ary){   
+        function fromPairs(ary){
                 let res = {};
                 for (let i = 0; i < ary.length; i++) {
                     res[ary[i][0]] = ary[i][1];
@@ -198,11 +198,20 @@
             return ary.slice(0,n)
         }
 
-        function indexOf(array,value,idx = 0){
-            for(var i = idx; i < array.length ; i++){
-                if(array[i] === value) return i;
-                return 1
+        function indexOf(ary,val,idx){//NaN判断不了
+            if(val !== val){
+                for(var i = idx; i < ary.length;i++){
+                    if(ary[i] !== ary[i])
+                    return i
+                }
+                return -1
             }
+            for(var i = idx; i < ary.length ; i++){
+                if(ary[i] === val) {//NaN !== NaN
+                    return i
+                }
+            }
+            return -1
         }
 
         function reverse(ary){
@@ -216,7 +225,7 @@
             }
             return ary
         }
-        
+
         function sortedIndex(array, value) {
             for (i = 0; i < array.length; i++) {
                 if (array[i] >= value) {
@@ -231,7 +240,7 @@
                 if (findIndex(arr, boolean) != -1) return true
                 return false
             }
-        
+
             for (e of arr) {
                 if (typeof e != "boolean") return false
             }
@@ -267,9 +276,6 @@
                 return -1
             }
         }
-        function filter(){
-
-        }
         function toArray(val){
             var res = []
             if(typeof(val) == 'object'){
@@ -297,7 +303,7 @@
             if(typeof f == 'function'){
                 for(let i in ary){
                     var Max = (f(ary[i]) > f(ary[i+1]))? f(ary[i]) : f(ary[i+1])
-                }  
+                }
             }else{
                 for(let i in ary){
                     var Max = (ary[i] > ary[i+1]) ? ary[i] : ary[i+1]
@@ -317,7 +323,7 @@
             if(typeof f == 'function'){
                 for(let i in ary){
                     var Min = (f(ary[i]) < f(ary[i+1])) ? f(ary[i]) : f(ary[i+1])
-                }  
+                }
             }else{
                 for(let i in ary){
                     var Min = (ary[i] < ary[i+1]) ? ary[i] : ary[i+1]
@@ -355,6 +361,74 @@
             }
             return obj
         }
+        function union(...ary){
+            let set = new Set()
+            ary.forEach((item)=>{
+                item.forEach((jtem)=>{
+                    set.add(jtem)
+                })
+            })
+            return [...set.values()]
+        }
+        function map(collection,predicate = it => it){
+            let res = []
+            for(let i = 0; i < collection.length; i++){
+                res.push(predicate(collection[i]))
+            }
+            return res
+        }
+        function reduce(collection,predicate = it => it,accumulator){
+            let res = accumulator
+            for(let i = 0;i < collection.length; i++){
+                res = predicate(res,collection[i])
+            }
+            return res
+        }
+        function filter(collection, predicate = it => it) {
+            let res = []
+            for (let i = 0; i < collection.length; i++) {
+                if (predicate(collection[i])){
+                    res.push(collection[i])
+                }
+            }
+            return res
+        }
+        function forEach(collection,predicate = it =>it){
+            let res = []
+            for(var i = 0; i < collection.length; i++){
+                res.push(predicate(collection[i]))
+            }
+            return res
+        }
+        function iteratee(f){
+            if(typeof(f)=='string'){
+                return 
+            }
+        }
+        function fromPairs(ary){
+            let res = {}
+            for(let i = 0; i < ary.length ; i++){
+                res[ary[i][0]] = ary[i][1]
+            }
+            return res
+        }
+        function last(ary){
+            return ary[ary.length-1]
+        }
+        function intersection(start, ...arr) {
+            let res = [];
+            for (let i of start) {
+                let flag = true;
+                for (let a of arr) {
+                    if (!a.includes(i)) {
+                        flag = false;
+                        break;
+                    }
+                }
+                flag && res.push(i);
+            }
+            return res;
+        }
         return{
             chunk,
             compact,
@@ -386,5 +460,14 @@
             minBy,
             sum,
             sumBy,
+            union,
+            map,
+            reduce,
+            forEach,
+            iteratee,
+            fromPairs,
+            last,
+            intersection,
+            
         }
     }()
